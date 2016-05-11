@@ -300,6 +300,7 @@ input {
 #sep {
 	background: url(../img/sep.jpg) no-repeat center top;
 	padding-top: 100px;
+	margin-bottom: 50px;
 	background-attachment: relative;
 	background-position: center center;
 	min-height: 450px;
@@ -325,8 +326,15 @@ input {
 
 /* FOOTER */
 #f {
-	padding-top: 25px;
-	padding-bottom: 25px;
+	position: fixed;
+	z-index: 999;
+	left:0px;
+   bottom:0px;
+   width:100%;
+	
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
 	background-color: #22A7F0;
 }
 
