@@ -204,7 +204,6 @@ input {
 	padding-top: 5px;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 700px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -220,9 +219,8 @@ input {
 }
 
 #h .logo {
-	margin-top: 30px;
+	margin: 30px;
 	margin-left: 40px;
-	padding-bottom: 150px;
 }
 
 #h .logo h2{
@@ -297,7 +295,7 @@ input {
 
 /* CONTACT SEPARATOR */
 #sep {
-	background: url(../img/sep.jpg) no-repeat center top;
+	background: url(https://www.actioninternational.org/data/FileManager/thumbnails/Files/Projects/Cambodia%20Church-Based%20Livelihood%20Sustenance%20Project_1540587367_1900x800_compression-7.jpeg) no-repeat center top;
 	padding-top: 100px;
 	margin-bottom: 50px;
 	background-attachment: relative;
@@ -378,4 +376,9 @@ input {
 #h2 h3 {
 	margin-top: 30px;
 	letter-spacing: 1px;
+}
+
+#mc_embed_signup form
+{
+	padding-top: 20px;
 }
