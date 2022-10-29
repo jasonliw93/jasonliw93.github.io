@@ -296,6 +296,7 @@ input {
 
 /* CONTACT SEPARATOR */
 #sep {
+	margin-top: 20px;
 	background: url(https://www.actioninternational.org/data/FileManager/thumbnails/Files/Projects/Cambodia%20Church-Based%20Livelihood%20Sustenance%20Project_1540587367_1900x800_compression-7.jpeg) no-repeat center top;
 	padding-top: 100px;
 	margin-bottom: 50px;
