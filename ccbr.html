@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jason Liw - CCBR Summer Internship Fundraising Letter">
+  <title>Join Me This Summer | Jason Liw</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf8f4;
+      --warm-white: #ffffff;
+      --charcoal: #2c2c2c;
+      --mid-grey: #6b6b6b;
+      --light-grey: #e8e4df;
+      --accent: #8b2635;
+      --accent-light: #f5eaec;
+      --gold: #c9a84c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--warm-white);
+      border-bottom: 1px solid var(--light-grey);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-header .logo {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .site-header nav a {
+      font-size: 0.85rem;
+      color: var(--mid-grey);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 30px;
+      transition: color 0.2s;
+    }
+
+    .site-header nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      background-color: var(--charcoal);
+      color: var(--warm-white);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #8b2635 0%, #2c2c2c 60%);
+      opacity: 0.85;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      text-align: center;
+    }
+
+    .hero-meta-item .number {
+      font-family: 'Lora', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-meta-item .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Progress bar */
+    .progress-section {
+      background-color: var(--warm-white);
+      padding: 30px 40px;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .progress-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--mid-grey);
+      margin-bottom: 10px;
+    }
+
+    .progress-label strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .progress-bar-bg {
+      background-color: var(--light-grey);
+      border-radius: 4px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background-color: var(--accent);
+      height: 100%;
+      width: 0%;
+      border-radius: 4px;
+      transition: width 1.5s ease;
+    }
+
+    .progress-deadline {
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      margin-top: 8px;
+      text-align: right;
+    }
+
+    /* Letter */
+    .letter-wrap {
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 0 30px;
+    }
+
+    .letter-greeting {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 30px;
+    }
+
+    .letter-body p {
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 22px;
+      line-height: 1.85;
+    }
+
+    .letter-section {
+      margin: 48px 0 24px;
+    }
+
+    .letter-section-title {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 36px 0;
+      background-color: var(--accent-light);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .pull-quote p {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin: 0 !important;
+      line-height: 1.6;
+    }
+
+    /* Donate box */
+    .donate-box {
+      background-color: var(--charcoal);
+      color: var(--warm-white);
+      border-radius: 10px;
+      padding: 40px;
+      margin: 48px 0;
+    }
+
+    .donate-box h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .donate-box .goal {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .donate-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .donate-method {
+      background-color: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 18px 22px;
+    }
+
+    .donate-method .method-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .donate-method p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .donate-method a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .donate-method a:hover {
+      text-decoration: underline;
+    }
+
+    .donate-note {
+      background-color: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .donate-note strong {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Signature */
+    .signature {
+      margin: 48px 0 16px;
+    }
+
+    .signature p {
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .signature .sig-name {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-top: 16px;
+    }
+
+    /* Contact + follow */
+    .contact-follow {
+      background-color: var(--warm-white);
+      border-top: 1px solid var(--light-grey);
+      border-bottom: 1px solid var(--light-grey);
+      padding: 40px 30px;
+      margin: 0 -30px 60px;
+    }
+
+    .contact-follow-inner {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .contact-col h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .contact-col a {
+      display: block;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .contact-col a:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      border-top: 1px solid var(--light-grey);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero { padding: 60px 24px; }
+      .letter-wrap { padding: 0 20px; }
+      .donate-box { padding: 28px 22px; }
+      .site-header { padding: 16px 20px; }
+      .hero-meta { gap: 24px; }
+      .contact-follow { padding: 32px 20px; margin: 0 -20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="logo">Jason Liw</a>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Summer 2026 Internship</p>
+      <h1>Will you join me in this work?</h1>
+      <p>Eight weeks. The Greater Toronto Area. One conversation at a time.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="number">8</span>
+          <span class="label">Weeks</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="number">$5,000</span>
+          <span class="label">To Raise</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="number">July 6</span>
+          <span class="label">Deadline</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Letter -->
+  <div class="letter-wrap">
+
+    <p class="letter-greeting">Dear friend and fellow traveller,</p>
+
+    <div class="letter-body">
+
+      <p>I'm writing to invite you into something I believe genuinely matters, and to ask for your support this summer, financially and in prayer. I want to tell you why.</p>
+
+      <p>This July, I'll be joining the Canadian Centre for Bio-Ethical Reform (CCBR) as an intern for eight weeks, from July 6 to August 29, doing outreach across the Greater Toronto Area. That means showing up on campuses, at doorsteps, and in public spaces to have real conversations with Canadians about abortion. To make this possible, I need to raise $5,000 before July 6. You're one of the people I thought of, and I hope you'll prayerfully consider coming alongside me.</p>
+
+      <div class="letter-section">
+        <h2 class="letter-section-title">A bit about CCBR and why their work matters</h2>
+      </div>
+
+      <p>Canada is the only democracy in the world with no abortion laws. Around 300 pre-born children are killed every day. That is not a statistic to scroll past. It is a reality that demands a response.</p>
+
+      <p>The pro-life movement works across three areas: caring for women in crisis through pregnancy centres, advocating for legal protections for the unborn, and changing hearts and minds through education. CCBR focuses on that third area, and they believe, rightly I think, that without it the other two cannot make much progress. Laws follow public opinion. And public opinion changes through conversation.</p>
+
+      <p>CCBR's strategy is two-fold: making the reality of abortion visible, and equipping people to have honest, compassionate conversations with ordinary Canadians about it. Think less protest, more conversation. Their staff and interns go out every day to campuses, neighbourhoods, and public spaces to engage people where they are, listen carefully, and speak truthfully. Of around 4,400 conversations tracked in 2023 alone, one in five people became fully pro-life, and one in seven became more pro-life. These are not small numbers. These are changed minds and, in many cases, saved lives.</p>
+
+      <p>And it is showing up nationally. Opposition to abortion has roughly doubled since CCBR launched this work in 2012. What strikes me most is that young Canadians, aged 18 to 34, are now less supportive of abortion than older generations. Something is genuinely changing, one conversation at a time.</p>
+
+      <div class="letter-section">
+        <h2 class="letter-section-title">Why this matters to me</h2>
+      </div>
+
+      <p>Over the last few years, I've had the privilege of being involved in mission and outreach here in Toronto, meeting people experiencing homelessness, working alongside those living in poverty, and trying to understand the deeper issues that keep people stuck and unseen. That work has shaped me in ways I didn't expect. It has taught me that the people our world most easily overlooks are often the ones who need someone to show up for them the most. And it has given me a conviction I can't shake: that the church has a responsibility to speak up for those who have no voice, not just the ones we can see, but also the ones we can't.</p>
+
+      <p>That is what draws me to this work.</p>
+
+      <p>We live in a world that increasingly measures human worth by usefulness. By convenience. By whether your existence makes someone else's life easier or harder. And when a pregnancy is unplanned, or difficult, or costly, our culture's quiet answer is often: this life is a problem to be solved. But that child is not a problem. That child has a mother and a father. That child belongs to a family, a story, a community. That child, if given the chance, will have a name, a laugh, a personality all their own, and people who cannot imagine the world without them. They are as real and as precious as anyone you and I have ever loved. And they deserve someone to show up for them.</p>
+
+      <p>I think about the people I've met through outreach here in Toronto, people who were told, in one way or another, that they were too much, too difficult, too costly to love. And I think about what it meant to them when someone simply showed up and said: you matter, you belong, you are not alone. That is exactly what this work is saying to the unborn. You are not an inconvenience. You are not a burden. You have a mother and a father. You have a story that has already begun. And your life is worth fighting for.</p>
+
+      <div class="pull-quote">
+        <p>The deepest truth about every one of us is not what we can do or achieve or offer. It is simply this: we are loved by God. That is where our worth comes from. That is what makes a life, any life, from its very first moment, worth protecting.</p>
+      </div>
+
+      <p>Being pro-life, at its heart, is not a political position. It is a deeply human one, rooted in the belief that every person is known and loved by the God who made them. I've come to believe that standing for the unborn belongs in the same breath as caring for the poor, welcoming the stranger, and fighting for justice. These are not separate causes. They are all expressions of the same stubborn, beautiful conviction that every single human life has dignity and deserves to be protected.</p>
+
+      <p>I'll be honest with you. I don't come to this with years of pro-life outreach behind me. But I do come with a genuine passion for the vulnerable, a willingness to have hard conversations, and a deep desire to do this with both courage and kindness. And I believe that is exactly what this moment calls for.</p>
+
+      <div class="letter-section">
+        <h2 class="letter-section-title">What I hope to bring home</h2>
+      </div>
+
+      <p>I'm going into this summer to learn as much as to serve. I want to grow in how to talk about hard things without losing warmth, and how to listen in a way that genuinely opens people up. And I want to bring those things back to the communities I'm part of here in Toronto, at Grace Toronto, New Life, and others, and help the people around me engage their neighbours with the same honesty and care.</p>
+
+      <!-- Donate Box -->
+      <div id="donate" class="donate-box">
+        <h3>How you can help</h3>
+        <p class="goal">Fundraising goal: $5,000 by July 6, 2026</p>
+
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7;">I'll be honest, asking for money doesn't come naturally to me. But I've come to see that when we invite people into something we genuinely believe in, we're not asking them to rescue us. We're offering them a chance to be part of something that matters. So consider this a warm invitation, not a plea.</p>
+
+        <div class="donate-methods">
+          <div class="donate-method">
+            <div class="method-title">Option 1 — E-Transfer</div>
+            <p>Send to <a href="mailto:email@endthekilling.ca">email@endthekilling.ca</a><br>
+            Include my name <strong>Jason Liw</strong> in the memo.</p>
+          </div>
+          <div class="donate-method">
+            <div class="method-title">Option 2 — Credit Card</div>
+            <p>Visit <a href="https://endthekilling.ca/donate" target="_blank">endthekilling.ca/donate</a><br>
+            Select <strong>"Support a specific Ontario intern salary"</strong><br>
+            and put <strong>Jason Liw</strong> in the notes box.</p>
+          </div>
+        </div>
+
+        <div class="donate-note">
+          <strong>Please note:</strong> CCBR is a non-profit organization but not a registered charity, which means they are not able to issue tax receipts for donations. I wanted you to know that before you give, so there are no surprises. Every dollar still goes directly toward making this outreach possible, and I'm deeply grateful for whatever you're able to contribute.
+        </div>
+      </div>
+
+      <p>If giving isn't possible right now, I'd genuinely value your prayers. Please pray for the people we'll meet this summer who are carrying this issue more personally than we'll know, and for the courage to stay present with them well.</p>
+
+      <div class="signature">
+        <p>Thank you for taking the time to read this. It means more than I can say. I'll keep you posted on how the summer unfolds.</p>
+        <p style="margin-top: 20px;">With gratitude,</p>
+        <p class="sig-name">Jason</p>
+      </div>
+
+      <!-- Contact + Follow -->
+      <div class="contact-follow">
+        <div class="contact-follow-inner">
+          <div class="contact-col">
+            <h4>Get in touch</h4>
+            <a href="mailto:jasonliw93@gmail.com">jasonliw93@gmail.com</a>
+            <a href="tel:4162062162">416-206-2162</a>
+          </div>
+          <div class="contact-col">
+            <h4>Follow along</h4>
+            <a href="https://jasonliw.ca" target="_blank">Subscribe at jasonliw.ca</a>
+            <a href="https://instagram.com/jason.liw.action" target="_blank">@jason.liw.action on Instagram</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jason Liw Yan Chong &mdash; Toronto, Canada</p>
+  </footer>
+
+  <script>
+    // Animate progress bar on load (placeholder - update with real amount raised)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var fill = document.querySelector('.progress-bar-fill');
+        if (fill) fill.style.width = '0%'; // Update this with actual % raised
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>
