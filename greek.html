@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Duff Vocab: Chapters 6 &amp; 7</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1d1b18;--mute:#6f6a62;--line:#ddd7cc;--acc:#7a2e2e;--ok:#2f6b3f;--bad:#a23b2a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171513;--card:#232019;--ink:#f1ece3;--mute:#a49d90;--line:#3a352c;--acc:#e0a38f;--ok:#7fc08f;--bad:#e58b78;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171513;--card:#232019;--ink:#f1ece3;--mute:#a49d90;--line:#3a352c;--acc:#e0a38f;--ok:#7fc08f;--bad:#e58b78;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,system-ui,"Segoe UI",Arial,sans-serif}
+main{max-width:680px;margin:0 auto;padding:14px 16px 28px}
+h1{font-size:19px;margin:4px 0 12px}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14px;cursor:pointer}
+.chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.stats{display:flex;justify-content:space-between;color:var(--mute);font-size:13px;margin:10px 2px 8px}
+.bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;background:var(--ok);width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 18px;cursor:pointer;user-select:none;position:relative}
+.big{font-size:38px;line-height:1.25;font-family:"Gentium Plus","Palatino Linotype",Georgia,serif;overflow-wrap:anywhere}
+.eng{font-size:24px}
+.sub{color:var(--mute);font-size:13px;margin-top:10px}
+.tag{position:absolute;top:10px;left:14px;font-size:12px;color:var(--mute)}
+.tip{margin-top:14px;font-size:15px;line-height:1.45;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+.endp{display:none}body.end .endp{display:block}
+.cp{display:none}body.charts .cp{display:block}body.charts .stats,body.charts .bar,body.charts #card,body.charts .acts,body.charts .foot,body.charts #opts{display:none}.cp h2{font-size:16px;margin:14px 0 4px}.cp .scroll{overflow-x:auto}.cp table{border-collapse:collapse;font-size:14px;min-width:620px;width:100%}.cp th,.cp td{border:1px solid var(--line);padding:5px 4px;text-align:center;vertical-align:top}.cp td{font-family:Gentium Plus,Palatino Linotype,Georgia,serif;font-size:16px}.cp td b{color:var(--acc)}.cp td small{display:block;color:var(--mute);font:12px -apple-system,system-ui,Arial,sans-serif}.cp th{font:13px -apple-system,system-ui,Arial,sans-serif}.cp th i{display:block;font-style:normal;font-weight:400;font-size:11px;color:var(--mute)}.cp .note{font-size:14px;color:var(--mute);margin:6px 0}.cp ul{padding-left:18px;font-size:15px;margin:6px 0}.cp li{margin-bottom:5px}body.end .stats,body.end .bar,body.end #card,body.end .acts,body.end .foot,body.end #opts{display:none}
+.endp h2{font-size:16px;margin:6px 0}.endp table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 14px}.endp th,.endp td{border:1px solid var(--line);padding:5px 4px;text-align:center;font-family:"Gentium Plus","Palatino Linotype",Georgia,serif}.endp th{font-family:-apple-system,system-ui,Arial,sans-serif;font-size:12px;color:var(--mute)}.endp ul{padding-left:18px;font-size:15px;margin:6px 0}.endp li{margin-bottom:6px}
+.hint{color:var(--mute);font-size:13px;margin-top:14px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.btn{border:0;border-radius:12px;padding:15px;font-size:16px;font-weight:600;cursor:pointer;color:#fff}
+.miss{background:var(--bad)}.got{background:var(--ok)}
+.btn:disabled{opacity:.4}
+.foot{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.foot .chip{font-size:13px}
+.done{padding:30px 10px}
+</style></head><body><main>
+<h1>Duff Vocab: Chapters 6–8</h1>
+<div class="row" id="chs"></div>
+<div class="row" id="opts"></div>
+<div class="stats"><span id="pos"></span><span id="known"></span></div>
+<div class="bar"><i id="fill"></i></div>
+<div class="card" id="card" role="button" tabindex="0"></div>
+<div class="acts"><button class="btn miss" id="miss">Missed</button><button class="btn got" id="got">Got it</button></div>
+<div class="foot"><button class="chip" id="shuf">Shuffle</button><button class="chip" id="reset">Reset progress</button></div>
+<div class="endp" id="endp">
+<h2>Deponent endings: ῥυομαι (I rescue)</h2>
+<table><tr><th></th><th>Present</th><th>Future</th><th>Imperfect</th><th>Aorist</th></tr>
+<tr><td>I</td><td>ῥυ-ομαι</td><td>ῥυσ-ομαι</td><td>ἐρυ-ομην</td><td>ἐρυσ-αμην</td></tr>
+<tr><td>you (sg.)</td><td>ῥυ-η</td><td>ῥυσ-η</td><td>ἐρυ-ου</td><td>ἐρυσ-ω</td></tr>
+<tr><td>he/she/it</td><td>ῥυ-εται</td><td>ῥυσ-εται</td><td>ἐρυ-ετο</td><td>ἐρυσ-ατο</td></tr>
+<tr><td>we</td><td>ῥυ-ομεθα</td><td>ῥυσ-ομεθα</td><td>ἐρυ-ομεθα</td><td>ἐρυσ-αμεθα</td></tr>
+<tr><td>you (pl.)</td><td>ῥυ-εσθε</td><td>ῥυσ-εσθε</td><td>ἐρυ-εσθε</td><td>ἐρυσ-ασθε</td></tr>
+<tr><td>they</td><td>ῥυ-ονται</td><td>ῥυσ-ονται</td><td>ἐρυ-οντο</td><td>ἐρυσ-αντο</td></tr></table>
+<h2>Other moods</h2>
+<table><tr><th></th><th></th><th>Present</th><th>Aorist</th></tr>
+<tr><td rowspan="2">Imperative</td><td>2 sg.</td><td>ῥυου</td><td>ῥυσαι</td></tr><tr><td>2 pl.</td><td>ῥυεσθε</td><td>ῥυσασθε</td></tr>
+<tr><td colspan="2">Infinitive</td><td>ῥυεσθαι</td><td>ῥυσασθαι</td></tr>
+<tr><td rowspan="2">Participle (masc. nom.)</td><td>sg.</td><td>ῥυομενος</td><td>ῥυσαμενος</td></tr><tr><td>pl.</td><td>ῥυομενοι</td><td>ῥυσαμενοι</td></tr></table>
+<h2>Memory hooks</h2>
+<ul>
+<li><b>Same meaning as normal verbs.</b> Deponent just means a different set of endings.</li>
+<li><b>Present and future are identical</b> apart from the σ, just like λυω.</li>
+<li><b>Ends in -ι? Present or future</b> (-μαι, -ται, -νται). <b>No ι? A past tense</b> (-μην, -το, -ντο).</li>
+<li><b>Only the 2nd singular really changes:</b> -η (present, future), -ου (imperfect), -ω (aorist). Say “η, ου, ω”.</li>
+<li><b>Vowel sounds:</b> ο and ε in the present, future and imperfect; α in the aorist.</li>
+<li><b>The σθ is the fingerprint:</b> -εσθε, -ασθε (you pl.), -εσθαι, -ασθαι (infinitives), and -εσθε in the present imperative 2 pl.</li>
+<li><b>Participles have -μεν-:</b> ῥυομενος. Spot -μεν- and think deponent or middle.</li>
+<li><b>Watch out:</b> the 2nd plural present imperative equals the present indicative (ῥυεσθε), and ἀρχομαι and ἐρχομαι look identical in the imperfect (ἠρχομην).</li>
+</ul></div>
+<div class='cp' id='cp'></div>
+</main>
+<script>
+// [greek, english, chapter, group, starred in book, NT frequency]
+const W=[
+["ἀνοιγω","I open",6,"Verbs like λυω",1,77],["ἀποκαλυπτω","I reveal, uncover",6,"Verbs like λυω",0,26],["βαπτιζω","I baptise, dip",6,"Verbs like λυω",1,77],["γραφω","I write",6,"Verbs like λυω",1,191],["διωκω","I persecute, pursue",6,"Verbs like λυω",0,45],["δοξαζω","I praise, glorify",6,"Verbs like λυω",1,61],["κηρυσσω","I proclaim, preach",6,"Verbs like λυω",1,61],["κραζω","I cry out",6,"Verbs like λυω",1,56],["πεμπω","I send",6,"Verbs like λυω",1,79],["πειθω","I convince, persuade",6,"Verbs like λυω",0,52],["σῳζω","I save, rescue, heal",6,"Verbs like λυω",1,106],["ὑπαρχω","I exist, I am",6,"Verbs like λυω",0,60],
+["αἰτεω","I ask (for)",6,"Verbs like φιλεω",1,70],["εὐλογεω","I speak well of, bless, praise",6,"Verbs like φιλεω",1,42],["εὐχαριστεω","I give thanks",6,"Verbs like φιλεω",1,38],["οἰκοδομεω","I build (up)",6,"Verbs like φιλεω",1,40],["προσεχω","+ dat.: I take heed of, pay attention to",6,"Verbs like φιλεω",1,24],
+["ἀρτι","now, just now",6,"Time words",0,36],["ἐτι","still, yet",6,"Time words",1,93],["ἠδη","already",6,"Time words",1,61],["νυν","now",6,"Time words",1,147],["ὁτε","when",6,"Time words",1,103],["οὐκετι","no longer",6,"Time words",0,47],["οὐπω","not yet",6,"Time words",0,26],["παλιν","back, again",6,"Time words",1,141],["παντοτε","always",6,"Time words",0,41],["ποτε","once (at some time)",6,"Time words",1,29],["σημερον","today",6,"Time words",0,41],["τοτε","then",6,"Time words",1,160],["δυο","two",6,"Time words",1,135],
+["Τιμοθεος","Timothy",6,"Extra nouns",1,24],["τοπος","place",6,"Extra nouns",1,94],
+["δικαιοσυνη","righteousness",7,"Feminine nouns",1,92],["ἐντολη","commandment",7,"Feminine nouns",1,67],["ἐξουσια","authority",7,"Feminine nouns",1,102],["παραβολη","parable",7,"Feminine nouns",1,50],["παρρησια","outspokenness, boldness",7,"Feminine nouns",0,31],["χαρα","joy",7,"Feminine nouns",0,59],
+["ἀποστολος","apostle",7,"Masculine nouns",1,80],["θανατος","death",7,"Masculine nouns",1,120],["ὀφθαλμος","eye",7,"Masculine nouns",1,100],["Φαρισαιος","Pharisee",7,"Masculine nouns",1,98],
+["θηριον","animal, beast",7,"Neuter nouns",1,46],["ἱματιον","garment",7,"Neuter nouns",1,60],["μνημειον","tomb, monument",7,"Neuter nouns",0,40],["προβατον","sheep",7,"Neuter nouns",1,39],
+["μη","not",7,"Negatives",1,1042],["μηδε","and not, but not",7,"Negatives",1,56],["μηκετι","no longer",7,"Negatives",0,22],["μητε","and not, nor",7,"Negatives",0,34],
+["ἀκολουθεω","+ dat.: I follow",7,"Verbs",1,90],["ἀναγω","I lead up, restore",7,"Verbs",0,23],["δεω","I bind, tie up",7,"Verbs",0,43],["δοκεω","I think, seem",7,"Verbs",1,62],["ἐλεεω","I have mercy on, pity",7,"Verbs",0,29],["θελω","I wish, want",7,"Verbs",1,208],["θεωρεω","I look at",7,"Verbs",1,58],["καταργεω","I make ineffective, abolish",7,"Verbs",0,27],["μαρτυρεω","I bear witness, testify",7,"Verbs",1,76],["μελλω","I intend, am about (to)",7,"Verbs",1,109],["μετανοεω","I repent, change my mind",7,"Verbs",1,34],
+["δει","it is necessary",7,"Impersonal verbs",1,101],["ἐξεστι","it is permitted",7,"Impersonal verbs",0,31],
+["ὀπισω","+ gen.: behind",7,"Preposition",1,35],
+["ἐρχομαι","I come, go",8,"Deponent verbs",1,634],["ἀπερχομαι","I depart, go away",8,"Deponent verbs",1,117],["διερχομαι","I cross over",8,"Deponent verbs",0,43],["εἰσερχομαι","I go into, enter",8,"Deponent verbs",1,194],["ἐξερχομαι","I go out, go away",8,"Deponent verbs",1,218],["παρερχομαι","I go by, pass by",8,"Deponent verbs",0,29],["προσερχομαι","I come to, go to, approach",8,"Deponent verbs",1,86],["συνερχομαι","I come together",8,"Deponent verbs",0,30],
+["ἁπτομαι","+ gen.: I touch",8,"Deponent verbs",0,39],["ἀρνεομαι","I refuse, deny",8,"Deponent verbs",1,33],["ἀρχομαι","I begin",8,"Deponent verbs",1,86],["ἀσπαζομαι","I greet",8,"Deponent verbs",1,59],["δεχομαι","I receive",8,"Deponent verbs",1,56],["ἐργαζομαι","I work",8,"Deponent verbs",1,41],["εὐαγγελιζομαι","I proclaim good news",8,"Deponent verbs",1,54],["λογιζομαι","I calculate, consider",8,"Deponent verbs",0,40],["προσευχομαι","I pray",8,"Deponent verbs",1,85],["προσκαλεομαι","I summon",8,"Deponent verbs",0,29],["ῥυομαι","I rescue",8,"Deponent verbs",1,17],
+["Ἡρῳδης","Herod",8,"Nouns like μαθητης",0,43],["Ἰωαννης","John",8,"Nouns like μαθητης",1,135],["μαθητης","disciple",8,"Nouns like μαθητης",1,261],["προφητης","prophet",8,"Nouns like μαθητης",1,144],["στρατιωτης","soldier",8,"Nouns like μαθητης",1,26],["ὑπηρετης","servant",8,"Nouns like μαθητης",0,20],
+["Βαρναβας","Barnabas",8,"Nouns like Ἰουδας",0,28],["Ἰουδας","Judah, Judas",8,"Nouns like Ἰουδας",1,44],["Σατανας","Satan",8,"Nouns like Ἰουδας",0,36],["Ἠλιας","Elijah (genitive in -ου)",8,"Nouns like Ἰουδας",1,29],
+["Αἰγυπτος","Egypt",8,"Feminine nouns like λογος",0,25],["ἐρημος","wilderness, desolate land",8,"Feminine nouns like λογος",1,48],["ὁδος","way, road",8,"Feminine nouns like λογος",1,101]
+];
+const T=[
+"“AH-noy-go”: picture a noisy, creaky door swinging open.",
+"Apocalypse! Revelation means “the unveiling”. ἀπο (off) + καλυπτω (cover) = take the cover off.",
+"Baptize. Same sound, same word. The root idea is dipping something in water.",
+"Graph, paragraph, graphic, bibliography: all about writing.",
+"“Dee-OH-ko”: picture a dog (Dio) chasing someone down: pursue, persecute.",
+"Doxology (“glory-speech”, like the Doxology song). δοξα = glory, so δοξαζω = I glorify.",
+"Kerygma = the church’s preached message. Picture a herald crying out the king’s news.",
+"“Craze-o”: a crazed crowd screaming. Cry out loudly.",
+"“PEM-po”: a pump sending water away. Pump out = send.",
+"“Pay-tho”: persuade someone and they trust you. Same family as πιστευω (I believe).",
+"Soteriology = study of salvation. σωτηρ = Saviour, same σω- root. Also covers healing in the Gospels.",
+"ὑπ- (under) + ἀρχω (begin): something that starts from underneath, i.e. it exists.",
+"“Eye-TEH-o”: puppy eyes begging. Takes a double accusative: the person AND the thing asked for.",
+"Eulogy: εὐ (good) + λογος (word) = speak well of, so bless.",
+"Eucharist = “thanksgiving”. εὐ (good) + χαρις (grace).",
+"οἰκος (house) + “dome”: build a house. Compare domicile, domestic.",
+"προς (toward) + ἐχω (have, hold): hold your attention toward something. Takes the dative.",
+"“Art-ee”: Art just arrived this second. A fresh, just-now. Contrast νυν.",
+"Sounds like English “yet”. Still, yet.",
+"“AY-day”: it’s already A-day, it already happened.",
+"Sounds like “noon/nun”: now. Straight now.",
+"ὁτε (when) and τοτε (then) are mirror images. Lock the pair together: “when… then…”",
+"οὐκ (not) + ἐτι (still) = not still = no longer.",
+"οὐ (not) + πω (yet) = not yet. Compare οὐκετι (no longer).",
+"Palindrome: a word that runs back/again, like “racecar”.",
+"παν (all) + τοτε (then) = all the thens = always. Pan- as in panorama.",
+"“Once (POH-teh) upon a time.” Not ὁτε (when) or τοτε (then).",
+"Think “same-day”: today is the SAME day you are in.",
+"Partner of ὁτε: “when… then”. Sounds like “tote”: then I toted it away.",
+"Duo, dual, duel, duet. Anything in twos.",
+"τιμη (honour) + θεος (God) = “honouring God”. Timothy’s name, literally.",
+"Topic, topography, topology: a place.",
+"From δικαιος (just). Think “dike”, Greek for justice. Long word, one idea: righteousness.",
+"“En-toll”: a toll booth barking orders, “pay the toll!”: a commandment.",
+"ἐξ (out of) + being: the right that comes out of who you are. Cousin of ἐξεστι.",
+"Parable (παρα beside + βαλλω throw: a story thrown alongside). Also parabola.",
+"παν (all) + ῥησις (speech): saying it all, openly. Boldness. Compare rhetoric.",
+"χαρα, χαρις (grace), Eucharist: one joy/grace family. Joy is grace received.",
+"Apostle. ἀπο (away) + στελλω (send): one who is sent away.",
+"Euthanasia (“good death”), thanatology. θανατος = death.",
+"Ophthalmologist: the eye doctor. ὀφθαλμος = eye.",
+"Pharisee: sounds the same. Capital letter, since it names a group.",
+"Sounds like “terrier”: a beast. Compare the beasts in Revelation.",
+"“Hi-MAT-ion”: a hi-mat, a rug you wear. A cloak or garment.",
+"Mnemonic (memory aid), memorial: a tomb is a memory marker.",
+"προ (forward) + βαινω (walk): things that walk forward, like sheep. Think John 10.",
+"Picture Mum saying “mē!”: don’t. The “not” for commands and the other moods (οὐ is for plain statements).",
+"μη + δε (but/and): “and not, but not”.",
+"μη + ἐτι: not still = no longer, in the other moods. Parallel to οὐκετι.",
+"μη + τε (and): and not, nor. μητε… μητε = neither… nor.",
+"Acolyte: an attendant who follows. Takes the dative: follow someone.",
+"ἀνα (up) + ἀγω (lead): lead up. Compare pedagogue, synagogue (-agogue = leading).",
+"Diadem: a band bound around the head. δεω = bind, tie.",
+"Docetic heresy: Jesus only seemed to have a body. δοκεω = seem, think.",
+"Kyrie eleison: “Lord, have mercy.” ἐλεεω = I have mercy.",
+"“Wishing WELL-o”: you toss a coin and wish. θελω = I want.",
+"Theory, theatre: looking at things. θεωρεω = I look at, observe.",
+"κατα (down) + ἀργος (idle: ἀ-ἐργον, no work): make idle, powerless, abolish. Cousin of “energy”.",
+"Martyr: someone who bears witness, often at great cost.",
+"“MEL-lo”: I’m about to go mellow. Usually followed by an infinitive: I’m about to…",
+"Metanoia: μετα (change) + νοεω (think) = change your mind, repent.",
+"Deontology (ethics of duty) comes from the same root. δει = it’s necessary, a must. Only 3rd singular.",
+"ἐξ + ἐστι: “it’s out there as an option” = it is permitted. Same ἐξ- as ἐξουσια (authority).",
+"“Oh-PEE-so”: oh, peek-o! You peek behind you. Takes the genitive.",
+"The core verb. Every compound below is just a preposition + this one.",
+"ἀπο (away) + ἐρχομαι: go away. Think apostasy, “standing away”.",
+"δια (through, across) + ἐρχομαι: cross over. Diameter, diagonal.",
+"εἰς (into) + ἐρχομαι: go into, enter.",
+"ἐξ (out) + ἐρχομαι: go out. Ex-it, ex-odus.",
+"παρα (beside, by) + ἐρχομαι: go by, pass by. Picture a parade passing by.",
+"προς (toward) + ἐρχομαι: come toward, approach. Same προς- as προσευχομαι.",
+"συν (together) + ἐρχομαι: come together. Synagogue, synergy.",
+"Picture something “apt” to be touched. Takes the genitive: touch someone.",
+"“Ar-NEH-o-mai”: a pirate refusing, “Arr, no!” Refuse, deny.",
+"Archaic, archetype: the beginning. Careful: ἀρχομαι and ἐρχομαι both give ἠρχομην in the imperfect.",
+"“A spa… so my…” Picture walking into a spa and the staff enthusiastically welcoming and embracing you: “Welcome to a spa, so my stress can melt away!”",
+"Deck, dock: a ship takes something on at the dock. Receive.",
+"Energy, ergonomics: ἐργον = work. I work.",
+"Evangelise: εὐ (good) + ἄγγελος (messenger): bring good news.",
+"Logic, logistics: λογος (word, reason) → reckon, calculate, consider.",
+"προς (to) + εὐχη (prayer): speak toward God. εὐχ- is also in Eucharist.",
+"προς (to) + καλεω (I call): call to yourself, summon.",
+"Duff’s model deponent. Rescue starts with R, ῥ is Greek R.",
+"Herod: same sound. Ends in -ης like μαθητης.",
+"John. Same -ης pattern. Can also be spelled with one ν.",
+"Mathematics, mathematician: those who learn. A disciple is a learner.",
+"Prophet: same sound. Masculine, ends -ης.",
+"Strategy, strategic: a soldier.",
+"Literally “under-rower”: the servant who rows below deck.",
+"Barnabas. Masculine in -ας: declines like Ἰουδας.",
+"Judah or Judas, depending on context. The model for the -ας group.",
+"Satan. Same -ας pattern as Ἰουδας.",
+"Elijah. Like Ἰουδας but the genitive ends in -ου.",
+"Egypt. Feminine even though it ends in -ος: declines like λογος.",
+"Hermit, eremite: someone living in the desert. Feminine, ends in -ος.",
+"Exodus (“way out”), method. Feminine, though it ends in -ος."
+];
+const S={ch:"both",dir:"lr",star:false,missed:false,order:[],i:0,flip:false,known:new Set(),miss:new Set()};
+try{const k=JSON.parse(localStorage.getItem("duff67")||"{}");S.known=new Set(k.known||[]);S.miss=new Set(k.miss||[])}catch(e){}
+const save=()=>{try{localStorage.setItem("duff67",JSON.stringify({known:[...S.known],miss:[...S.miss]}))}catch(e){}};
+const $=id=>document.getElementById(id);
+function pool(){return W.map((w,i)=>i).filter(i=>{const w=W[i];return (S.ch==="both"||w[2]==+S.ch)&&(!S.star||w[4])&&(!S.missed||S.miss.has(i))})}
+function build(shuffle){S.order=pool();if(shuffle)for(let j=S.order.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[S.order[j],S.order[k]]=[S.order[k],S.order[j]]}S.i=0;S.flip=false;draw()}
+function mode(m){S.end=m==='end'?!S.end:false;S.charts=m==='charts'?!S.charts:false;document.body.classList.toggle('end',S.end);document.body.classList.toggle('charts',S.charts);chips()}
+function chips(){
+ $("chs").innerHTML="";[["both","All"],["6","Ch. 6"],["7","Ch. 7"],["8","Ch. 8"]].forEach(([v,t])=>{const b=document.createElement("button");b.className='chip'+(S.ch===v&&!S.end&&!S.charts?' on':'');b.textContent=t;b.onclick=()=>{S.ch=v;S.end=S.charts=false;document.body.classList.remove('end','charts');chips();build(S.dir!=='lr')};$("chs").appendChild(b)});
+ {const b=document.createElement("button");b.className="chip"+(S.end?" on":"");b.textContent="Deponent endings";b.onclick=()=>mode('end');$('chs').appendChild(b)}
+ {const b=document.createElement('button');b.className='chip'+(S.charts?' on':'');b.textContent='Verb charts';b.onclick=()=>mode('charts');$('chs').appendChild(b)}
+ $("opts").innerHTML="";[["Learn",S.dir==="lr",()=>S.dir="lr"],["Greek → English",S.dir==="ge",()=>S.dir="ge"],["English → Greek",S.dir==="eg",()=>S.dir="eg"],["★ only",S.star,()=>S.star=!S.star],["Missed only",S.missed,()=>S.missed=!S.missed]].forEach(([t,on,f])=>{const b=document.createElement("button");b.className="chip"+(on?" on":"");b.textContent=t;b.onclick=()=>{f();chips();build(false)};$("opts").appendChild(b)});
+}
+function draw(){
+ const n=S.order.length,c=$("card");
+ const inPool=S.order.filter(i=>S.known.has(i)).length;
+ $("known").textContent=inPool+" of "+n+" known";$("fill").style.width=(n?inPool/n*100:0)+"%";
+ $("miss").disabled=$("got").disabled=!n;
+ if(!n){$("pos").textContent="";c.innerHTML='<div class="done">No cards here yet. Try turning off a filter.</div>';return}
+ if(S.i>=n){$("pos").textContent="Done";c.innerHTML='<div class="done"><div class="big">Round finished</div><div class="sub">Tap “Missed only” to drill what you missed, or Shuffle to go again.</div></div>';$("miss").disabled=$("got").disabled=true;return}
+ const w=W[S.order[S.i]];$("pos").textContent="Card "+(S.i+1)+" of "+n;
+ const front=S.dir==="ge"?'<div class="big">'+w[0]+'</div>':'<div class="eng">'+w[1]+'</div>';
+ const back=S.dir==="ge"?'<div class="eng">'+w[1]+'</div>':'<div class="big">'+w[0]+'</div>';
+ const tip='<div class="tip">💡 '+T[S.order[S.i]]+'</div>';
+ const tag='<span class="tag">Ch. '+w[2]+(w[4]?" · ★":"")+'</span>';
+ const info='<div class="sub">'+w[3]+" · "+w[5]+"× in NT</div>";
+ if(S.dir==="lr"){$("miss").textContent="Back";$("got").textContent="Next";c.innerHTML=tag+'<div class="big">'+w[0]+'</div><div class="eng">'+w[1]+'</div>'+info+tip;return}
+ $("miss").textContent="Missed";$("got").textContent="Got it";
+ c.innerHTML=tag+(S.flip?back+info+tip:front+'<div class="hint">Tap to reveal</div>');
+}
+function next(ok){if(S.i>=S.order.length)return;const id=S.order[S.i];if(ok){S.known.add(id);S.miss.delete(id)}else{S.known.delete(id);S.miss.add(id)}save();S.i++;S.flip=false;draw()}
+$("card").onclick=()=>{if(S.i<S.order.length){S.flip=!S.flip;draw()}};
+$("got").onclick=()=>{if(S.dir==="lr"){S.i++;draw()}else next(true)};$("miss").onclick=()=>{if(S.dir==="lr"){S.i=Math.max(0,S.i-1);draw()}else next(false)};
+$("shuf").onclick=()=>build(true);
+$("reset").onclick=()=>{S.known.clear();S.miss.clear();save();build(true)};
+const PK=`<p class='note'><b>Saying it:</b> a = “hat”, eh = “met”, o = “not”, oh = ω, ay = η, eigh = ει, igh = αι, oy = οι, oo = υ and ου. CAPS mark the stem. Duff’s charts have no accents, so CAPS are not true Greek stress, and if your teacher pronounces things differently, follow your teacher. Say each row out loud. The <b style='color:var(--acc)'>coloured part</b> is the ending.</p>`;
+const TH=[['Present','stem + endings'],['Future','add σ'],['Imperfect','add ἐ-, past'],['Aorist','ἐ- + σ + α-endings']];
+const PL=[['I','-ω: “oh”'],['you (sg.)','ends in ς'],['he/she/it','-ει / -ε'],['we','-μεν: “men”'],['you (pl.)','-τε: “teh”'],['they','-ουσι / -ον / -αν']];
+const PR=[['I','-μαι / -μην'],['you (sg.)','η · ου · ω'],['he/she/it','-ται / -το'],['we','-μεθα'],['you (pl.)','-σθε'],['they','-νται / -ντο']];
+const EL=[[['ω','oh'],['εις','eighs'],['ει','eigh'],['ομεν','o-men'],['ετε','eh-teh'],['ουσι(ν)','oo-sin']],[['ον','on'],['ες','es'],['ε(ν)','eh(n)'],['ομεν','o-men'],['ετε','eh-teh'],['ον','on']],[['α','a'],['ας','as'],['ε(ν)','eh(n)'],['αμεν','a-men'],['ατε','a-teh'],['αν','an']]];
+const ER=[[['ομαι','o-migh'],['ῃ','ay'],['εται','eh-tigh'],['ομεθα','o-meh-tha'],['εσθε','es-theh'],['ονται','on-tigh']],[['ομην','o-mayn'],['ου','oo'],['ετο','eh-to'],['ομεθα','o-meh-tha'],['εσθε','es-theh'],['οντο','on-to']],[['αμην','a-mayn'],['ω','oh'],['ατο','a-to'],['αμεθα','a-meh-tha'],['ασθε','as-theh'],['αντο','an-to']]];
+const SL=[['λυ','LOO'],['λυσ','LOOS'],['ἐλυ','eh-LOO'],['ἐλυσ','eh-LOOS']];
+const SR=[['ῥυ','RHOO'],['ῥυσ','RHOOS'],['ἐρυ','eh-ROO'],['ἐρυσ','eh-ROOS']];
+const ML=[['Imperative · 2 sg.',['λυ','ε','LOO','eh'],['λυσ','ον','LOOS','on']],['Imperative · 2 pl.',['λυ','ετε','LOO','eh-teh'],['λυσ','ατε','LOOS','a-teh']],['Infinitive',['λυ','ειν','LOO','eighn'],['λυσ','αι','LOOS','igh']],['Participle · sg.',['λυ','ων','LOO','ohn'],['λυσ','ας','LOOS','as']],['Participle · pl.',['λυ','οντες','LOO','on-tes'],['λυσ','αντες','LOOS','an-tes']]];
+const MR=[['Imperative · 2 sg.',['ῥυ','ου','RHOO','oo'],['ῥυσ','αι','RHOOS','igh']],['Imperative · 2 pl.',['ῥυ','εσθε','RHOO','es-theh'],['ῥυσ','ασθε','RHOOS','as-theh']],['Infinitive',['ῥυ','εσθαι','RHOO','es-thigh'],['ῥυσ','ασθαι','RHOOS','as-thigh']],['Participle · sg.',['ῥυ','ομενος','RHOO','o-meh-nos'],['ῥυσ','αμενος','RHOOS','a-meh-nos']],['Participle · pl.',['ῥυ','ομενοι','RHOO','o-meh-noy'],['ῥυσ','αμενοι','RHOOS','a-meh-noy']]];
+const NL=['<b>Present and future share endings.</b> The future is the present plus σ.','<b>2nd person always ends in ς</b> (-εις, -ες, -ας). “We” is -μεν (“men”), “you all” is -τε (“teh”).','<b>Imperfect “I” and “they” are the same:</b> -ον. Aorist is the α-set: α, ας, ε, αμεν, ατε, αν.','<b>Aorist = σ + α.</b> Imperfect = ο / ε. The vowel sound gives the tense away.','<b>Other moods:</b> no augment, only present or aorist. Present infinitive -ειν, aorist -σαι.','<b>Participles:</b> ο-sound in the present (λυων), α-sound in the aorist (λυσας). Plurals end -ντες.','<b>Traps:</b> 2 pl. present imperative = present indicative (λυετε). λυσον is an aorist imperative, not a future.'];
+const NR=['<b>Ends in -ι? Present or future</b> (-μαι, -ται, -νται). <b>No ι? A past tense</b> (-μην, -το, -ντο).','<b>Only the 2nd singular really changes:</b> -η (present, future), -ου (imperfect), -ω (aorist). Say “η, ου, ω”.','<b>Present and future are the same</b> except for the σ. Aorist has the α-sound, the rest ο / ε.','<b>σθ is the deponent fingerprint:</b> -εσθε, -ασθε, -εσθαι, -ασθαι.','<b>Participles have -μεν-:</b> ῥυομενος, ῥυσαμενος.','<b>Traps:</b> 2 pl. present imperative = present indicative (ῥυεσθε). Deponent means the same as a normal verb, only the endings differ.'];
+const THF=[['Present','ε contracts with the ending'],['Future','ε → η, then add σ'],['Imperfect','add ἐ- and contract'],['Aorist','ἐ- + ησ + α-endings']];
+const PF=[['I','-ω'],['you (sg.)','ends in ς'],['he/she/it','-ει / -ε'],['we','-ουμεν / -ομεν'],['you (pl.)','-ειτε / -ετε'],['they','-ουσι / -ουν / -αν']];
+const EF=[[['ω','oh'],['εις','eighs'],['ει','eigh'],['ουμεν','oo-men'],['ειτε','eigh-teh'],['ουσι(ν)','oo-sin']],[['ω','oh'],['εις','eighs'],['ει','eigh'],['ομεν','o-men'],['ετε','eh-teh'],['ουσι(ν)','oo-sin']],[['ουν','oon'],['εις','eighs'],['ει','eigh'],['ουμεν','oo-men'],['ειτε','eigh-teh'],['ουν','oon']],EL[2]];
+const SF=[['φιλ','FIL'],['φιλησ','FIL-AYS'],['ἐφιλ','eh-FIL'],['ἐφιλησ','eh-FIL-AYS']];
+const MF=[['Imperative · 2 sg.',['φιλ','ει','FIL','eigh'],['φιλησ','ον','FIL-AYS','on']],['Imperative · 2 pl.',['φιλ','ειτε','FIL','eigh-teh'],['φιλησ','ατε','FIL-AYS','a-teh']],['Infinitive',['φιλ','ειν','FIL','eighn'],['φιλησ','αι','FIL-AYS','igh']],['Participle · sg.',['φιλ','ων','FIL','ohn'],['φιλησ','ας','FIL-AYS','as']],['Participle · pl.',['φιλ','ουντες','FIL','oon-tes'],['φιλησ','αντες','FIL-AYS','an-tes']]];
+const NF=['<b>The ε of the stem contracts</b> with the ending in the present and imperfect: ε + ο = ου, ε + ε = ει, ε + ω = ω. That is why φιλ-ομεν becomes φιλουμεν.','<b>Future and aorist: the ε lengthens to η</b> before the σ (φιλησω, ἐφιλησα). After that, the endings are just like λυω.','<b>Imperfect “I” and “they” are the same:</b> ἐφιλουν. The ἐ- augment and the contraction both show up.','<b>Quick spot:</b> ουμεν or ειτε = present or imperfect εω verb. ησ = future or aorist.','<b>Imperatives:</b> present φιλει, φιλειτε; aorist φιλησον, φιλησατε. Participles: φιλων, φιλουντες; φιλησας, φιλησαντες.','<b>Traps:</b> 2 pl. present imperative = present indicative (φιλειτε). φιλησον looks like a future but isn’t.','<b>Which verbs?</b> αἰτεω, εὐλογεω, εὐχαριστεω, οἰκοδομεω, and many Chapter 7 verbs (ἀκολουθεω, θεωρεω, μαρτυρεω…). The three look like compounds but take the augment at the very front.'];
+function cell(a){return `<td>${a[0]}<b>${a[1]}</b><small>${a[2]}-${a[3]}</small></td>`}
+function chart(title,st,en,pers,moods,notes,ix,th){
+ let h=`<h2>${title}</h2><div class='scroll'><table><tr><th></th>`+(th||TH).map(t=>`<th>${t[0]}<i>${t[1]}</i></th>`).join('')+'</tr>';
+ pers.forEach((p,i)=>{h+=`<tr><th>${p[0]}<i>${p[1]}</i></th>`+(ix||[0,0,1,2]).map((e,t)=>cell([st[t][0],en[e][i][0],st[t][1],en[e][i][1]])).join('')+'</tr>'});
+ h+=`</table></div><h2>Other moods</h2><div class='scroll'><table><tr><th></th><th>Present</th><th>Aorist</th></tr>`+moods.map(m=>`<tr><th>${m[0]}</th>${cell(m[1])}${cell(m[2])}</tr>`).join('')+'</table></div><ul>'+notes.map(n=>`<li>${n}</li>`).join('')+'</ul>';
+ return h}
+function renderCharts(){$('cp').innerHTML=PK+chart('λυω (I loosen): normal endings',SL,EL,PL,ML,NL)+chart('φιλεω (I love): εω verbs',SF,EF,PF,MF,NF,[0,1,2,3],THF)+chart('ῥυομαι (I rescue): deponent endings',SR,ER,PR,MR,NR)}
+renderCharts();chips();build(false);
+</script></body></html>
